@@ -50,14 +50,14 @@ public class main {
 			File file = new File("/Users/hayato/workspaceprocpn1/AutoProgram/src/takashima/" + filename);
 			fis = new BufferedInputStream(new FileInputStream(file));
 			
-			//ƒ^ƒCƒv‚Ìæ“¾
+			//ã‚¿ã‚¤ãƒ—ã®å–å¾—
 			fis.read(btype);
 			type = String.valueOf((char)btype[0]) + String.valueOf((char)btype[1]);
 			
 			fis.read(three);
 			fis.read(bspritrow);
 			
-			//•ªŠ„‚Ì—ñ”‚Ìæ“¾
+			//åˆ†å‰²ã®åˆ—æ•°ã®å–å¾—
 			if(bspritrow[1] == 0x20){
 				bspritrow[1] = 0;
 				fis.read(bspritline);
@@ -69,7 +69,7 @@ public class main {
 			}
 			System.out.println("Spritrow = " + sspritrow);
 			
-			//•ªŠ„‚Ìs”‚Ìæ“¾
+			//åˆ†å‰²ã®è¡Œæ•°ã®å–å¾—
 			if(bspritline[1] == 0x0A){
 				bspritline[1] = 0;
 				fis.read(twe);
@@ -82,7 +82,7 @@ public class main {
 			}
 			System.out.println("spritline = " + sspritline);
 			
-			//‘I‘ğ‰ñ”‚Ìæ“¾
+			//é¸æŠå›æ•°ã®å–å¾—
 			if(bselectnumber[1] == 0x0A){
 				bselectnumber[1] = 0;
 				bselectnumber[2] = 0;
@@ -101,7 +101,7 @@ public class main {
 			}
 			System.out.println("selectnumber = " + sselectnumber);
 			
-			//ƒRƒXƒg‚Ìæ“¾
+			//ã‚³ã‚¹ãƒˆã®å–å¾—
 			if(bselectcost[1] == 0x20){
 				bselectcost[1] = 0;
 				bchangecost[0] = bselectcost[2];
@@ -171,7 +171,7 @@ public class main {
 			}
 			System.out.println("selectcost = " + sselectcost + "\nchangecost = " + schangecost);
 			
-			//‰æ‘œƒTƒCƒY,Å‘å‹P“x‚Ìæ“¾
+			//ç”»åƒã‚µã‚¤ã‚º,æœ€å¤§è¼åº¦ã®å–å¾—
 			 if(bwidth[1] == 0x20){
 				 swidth = String.valueOf((char)bwidth[0]);
 				 
@@ -186,7 +186,7 @@ public class main {
 							 bheigth[3] = tmp[0];
 							 sheigth = String.valueOf((char)bheigth[0]) + String.valueOf((char)bheigth[1]) + String.valueOf((char)bheigth[2]) + String.valueOf((char)bheigth[3]);
 							 
-							 //‹P“x‚Ìæ“¾
+							 //è¼åº¦ã®å–å¾—
 							 fis.read();
 							 fis.read(tmp);
 							 blight[0] = tmp [0];
@@ -207,7 +207,7 @@ public class main {
 						 }else{
 							 sheigth = String.valueOf((char)bheigth[0]) + String.valueOf((char)bheigth[1]) + String.valueOf((char)bheigth[2]);
 							 
-							 //‹P“x‚Ìæ“¾
+							 //è¼åº¦ã®å–å¾—
 							 fis.read(tmp);
 							 blight[0] = tmp [0];
 							 fis.read(tmp);
@@ -228,7 +228,7 @@ public class main {
 					 }else{
 						 sheigth = String.valueOf((char)bheigth[0]) + String.valueOf((char)bheigth[1]);
 						 
-						//‹P“x‚Ìæ“¾
+						//è¼åº¦ã®å–å¾—
 						 fis.read(tmp);
 						 blight[0] = tmp [0];
 						 fis.read(tmp);
@@ -249,7 +249,7 @@ public class main {
 				 }else{
 					sheigth = String.valueOf((char)bheigth[0]);
 					
-					//‹P“x‚Ìæ“¾
+					//è¼åº¦ã®å–å¾—
 					 fis.read(tmp);
 					 blight[0] = tmp [0];
 					 fis.read(tmp);
@@ -275,7 +275,7 @@ public class main {
 				 if(tmp[0] == 0x0A){
 					 sheigth = String.valueOf((char)bheigth[0]);
 					 
-					 //‹P“x‚Ìæ“¾
+					 //è¼åº¦ã®å–å¾—
 					 fis.read(tmp);
 					 blight[0] = tmp [0];
 					 fis.read(tmp);
@@ -298,7 +298,7 @@ public class main {
 					 if(tmp[0] == 0x0A){
 						 sheigth = String.valueOf((char)bheigth[0]) + String.valueOf((char)bheigth[1]);
 						 
-						//‹P“x‚Ìæ“¾
+						//è¼åº¦ã®å–å¾—
 						 fis.read(tmp);
 						 blight[0] = tmp [0];
 						 fis.read(tmp);
@@ -321,7 +321,7 @@ public class main {
 						 if(tmp[0] == 0x0A){
 							 sheigth = String.valueOf((char)bheigth[0]) + String.valueOf((char)bheigth[1]) + String.valueOf((char)bheigth[2]);
 							 
-							 //‹P“x‚Ìæ“¾
+							 //è¼åº¦ã®å–å¾—
 							 fis.read(tmp);
 							 blight[0] = tmp [0];
 							 fis.read(tmp);
@@ -342,7 +342,7 @@ public class main {
 							 bheigth[3] = tmp[0];
 							 sheigth = String.valueOf((char)bheigth[0]) + String.valueOf((char)bheigth[1]) + String.valueOf((char)bheigth[2]) + String.valueOf((char)bheigth[3]);
 							 
-							//‹P“x‚Ìæ“¾
+							//è¼åº¦ã®å–å¾—
 							 fis.read();
 							 fis.read(tmp);
 							 blight[0] = tmp [0];
@@ -411,7 +411,7 @@ public class main {
 				 }else if(bheigth[3] == 0x0A){
 					 sheigth = String.valueOf((char)bheigth[0]) + String.valueOf((char)bheigth[1]) + String.valueOf((char)bheigth[2]);
 					 
-					 //‹P“x‚Ìæ“¾
+					 //è¼åº¦ã®å–å¾—
 					 fis.read(tmp);
 					 blight[0] = tmp [0];
 					 fis.read(tmp);
@@ -431,7 +431,7 @@ public class main {
 				 }else{
 					 sheigth = String.valueOf((char)bheigth[0]) + String.valueOf((char)bheigth[1]) + String.valueOf((char)bheigth[2]) + String.valueOf((char)bheigth[3]);
 					 
-					 //‹P“x‚Ìæ“¾
+					 //è¼åº¦ã®å–å¾—
 					 fis.read();
 					 fis.read(tmp);
 					 blight[0] = tmp [0];
@@ -499,7 +499,7 @@ public class main {
 				 }else if(bheigth[3] == 0x0A){
 					 sheigth = String.valueOf((char)bheigth[0]) + String.valueOf((char)bheigth[1]) + String.valueOf((char)bheigth[2]);
 					 
-					 //‹P“x‚Ìæ“¾
+					 //è¼åº¦ã®å–å¾—
 					 fis.read(tmp);
 					 blight[0] = tmp [0];
 					 fis.read(tmp);
@@ -519,7 +519,7 @@ public class main {
 				 }else{
 					 sheigth = String.valueOf((char)bheigth[0]) + String.valueOf((char)bheigth[1]) + String.valueOf((char)bheigth[2]) + String.valueOf((char)bheigth[3]);
 					 
-					 //‹P“x‚Ìæ“¾
+					 //è¼åº¦ã®å–å¾—
 					 fis.read();
 					 fis.read(tmp);
 					 blight[0] = tmp [0];
@@ -543,7 +543,7 @@ public class main {
 			 System.out.println("heith = " + sheigth);
 			 System.out.println("light = " + slight);
 			 
-			 //•¶š—ñ‚©‚ç®”Œ^‚Ö‚Ì•ÏŠ·
+			 //æ–‡å­—åˆ—ã‹ã‚‰æ•´æ•°å‹ã¸ã®å¤‰æ›
 			 spritline = Integer.parseInt(sspritline);
 			 spritrow = Integer.parseInt(sspritrow);
 			 selectnumber = Integer.parseInt(sselectnumber);
@@ -554,7 +554,7 @@ public class main {
 			 light = Integer.parseInt(slight);
 			 
 			 
-			 //‰æ‘œƒf[ƒ^‚Ìæ“¾
+			 //ç”»åƒãƒ‡ãƒ¼ã‚¿ã®å–å¾—
 			 BufferedImage image = new BufferedImage(width, heigth, BufferedImage.TYPE_INT_BGR);
 			 for(int i = 0; i < heigth; i++){
 				 for(int j = 0; j < width; j++){
@@ -573,7 +573,7 @@ public class main {
 			fis.read(test);
 			System.out.println(Integer.toHexString(test[0]));
 			
-			//•ªŠ„‰æ‘œ‚Ì‰Šú‰»
+			//åˆ†å‰²ç”»åƒã®åˆæœŸåŒ–
 			pict = new Picture[spritrow*spritline];
 			for(int i = 0; i < spritrow*spritline; i++){
 				pict[i] = new Picture(width/spritrow, heigth/spritline);
@@ -603,7 +603,7 @@ public class main {
 			}
 			
 			/*
-			//‰æ‘œ‚Ì•À‚×‘Ö‚¦
+			//ç”»åƒã®ä¸¦ã¹æ›¿ãˆ
 			int[] tmp_top = new int[width/spritrow];
 			int[] tmp_under = new int[width/spritrow];
 			int[] tmp_right = new int[heigth/spritline];
@@ -617,10 +617,10 @@ public class main {
 						tmp_right = pict[i].getRoundPix("right");
 						tmp_left = pict[i].getRoundPix("left");
 					    
-						//-------•ªŠ„‰æ‘œ‚Ìã‚Ì•”•ª‚Æ‹ß‚¢‰º‚Ì•”•ª‚ğ‚Â‰æ‘œ‚ğŒŸõ
+						//-------åˆ†å‰²ç”»åƒã®ä¸Šã®éƒ¨åˆ†ã¨è¿‘ã„ä¸‹ã®éƒ¨åˆ†ã‚’æŒã¤ç”»åƒã‚’æ¤œç´¢
 						int min_haming = -1;
 						
-						//‰E‚É‚¸‚ç‚µ‚Ä‚¢‚­
+						//å³ã«ãšã‚‰ã—ã¦ã„ã
 						tmp_top = pict[i].getRoundPix("top");
 						System.out.println("i = " + i);
 							count = 0;
@@ -638,9 +638,9 @@ public class main {
 							pict[i].setTop(pict[k]);
 						}
 						
-						//-------•ªŠ„‰æ‘œ‚Ì‰E‚Ì•”•ª‚Æ‹ß‚¢¶‚Ì•”•ª‚ğ‚Â‰æ‘œ‚ğŒŸõ
+						//-------åˆ†å‰²ç”»åƒã®å³ã®éƒ¨åˆ†ã¨è¿‘ã„å·¦ã®éƒ¨åˆ†ã‚’æŒã¤ç”»åƒã‚’æ¤œç´¢
 						min_haming = -1;
-						//ã‚É‚¸‚ç‚µ‚Ä‚¢‚­
+						//ä¸Šã«ãšã‚‰ã—ã¦ã„ã
 						tmp_right = pict[i].getRoundPix("right");
 							count = 0;
 							for(int l = 0; l < heigth/spritline; l++){
@@ -682,47 +682,78 @@ public class main {
 			
 			// window
 			
-			//ƒtƒŒ[ƒ€‚Ìì¬
+			//ãƒ•ãƒ¬ãƒ¼ãƒ ã®ä½œæˆ
 			JFrame frame = new JFrame();
 			 
-			//ƒ^ƒCƒgƒ‹‚ğİ’è
+			//ã‚¿ã‚¤ãƒˆãƒ«ã‚’è¨­å®š
 			frame.setTitle("View3156");
 	
-			//ƒtƒŒ[ƒ€iƒEƒBƒ“ƒhƒEj‚ÌƒTƒCƒY‚ğİ’è
+			//ãƒ•ãƒ¬ãƒ¼ãƒ ï¼ˆã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ï¼‰ã®ã‚µã‚¤ã‚ºã‚’è¨­å®š
 			frame.setBounds(0,0,AppCanvas.scale * main.spritline + 6, AppCanvas.scale * main.spritrow + 28);
-			//~ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚Ìˆ—‚ğ‹Lq
+			//Ã—ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã®å‡¦ç†ã‚’è¨˜è¿°
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
-			//ƒEƒBƒ“ƒhƒEƒTƒCƒY‚ÍŒÅ’è
+			//ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºã¯å›ºå®š
 			frame.setResizable(false);
 	
-			//ƒŒƒCƒAƒEƒg‚Íè“®
+			//ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã¯æ‰‹å‹•
 			frame.setLayout(null);
 			
-			//ƒRƒ“ƒeƒ“ƒgƒyƒCƒ“‚Ìì¬
+			//ã‚³ãƒ³ãƒ†ãƒ³ãƒˆãƒšã‚¤ãƒ³ã®ä½œæˆ
 			JPanel cp = new JPanel();
 
-			//ƒŒƒCƒAƒEƒg‚Íè“®
+			//ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã¯æ‰‹å‹•
 			cp.setLayout(null);
 
-			//ƒtƒŒ[ƒ€‚ÉƒRƒ“ƒeƒ“ƒgƒyƒCƒ“‚ğ“o˜^
+			//ãƒ•ãƒ¬ãƒ¼ãƒ ã«ã‚³ãƒ³ãƒ†ãƒ³ãƒˆãƒšã‚¤ãƒ³ã‚’ç™»éŒ²
 			frame.add(cp);
 
-			//ƒRƒ“ƒeƒ“ƒgƒyƒCƒ“‚Ì“\‚è•t‚¯ˆÊ’u
+			//ã‚³ãƒ³ãƒ†ãƒ³ãƒˆãƒšã‚¤ãƒ³ã®è²¼ã‚Šä»˜ã‘ä½ç½®
 			cp.setBounds( 0, 0, main.width, main.heigth);
 			  
 			AppCanvas canvas = new AppCanvas();
 			
-			// pict”z—ñ‚ÌXV‚ğ“K‰‚·‚é
+			// picté…åˆ—ã®æ›´æ–°ã‚’é©å¿œã™ã‚‹
 			canvas.updatePictArray();
 			cp.add(canvas);
 			canvas.setBounds(0, 0, main.width, main.heigth);
 			
-			frame.setVisible(true);	// •`‰æ
+			frame.setVisible(true);	// æç”»
 			
 			
-			// ‚±‚±‚©‚çƒfƒoƒbƒO—p
-			
+			// ã“ã“ã‹ã‚‰ãƒ‡ãƒãƒƒã‚°ç”¨
+			frame.addMouseListener(new MouseListener() {
+				
+				@Override
+				public void mouseReleased(MouseEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void mousePressed(MouseEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void mouseExited(MouseEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void mouseEntered(MouseEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					// TODO Auto-generated method stub
+					//ã“ã“ã«å‡¦ç†ã‚’
+				}
+			});
 			mouse_Frame mouse = new mouse_Frame("mouse1",192,192);
 			mouse.setVisible(true);
 			
@@ -730,10 +761,10 @@ public class main {
 			pict[0] = pict[1];
 			pict[1] = tmpPict;
 			
-			// ƒAƒbƒvƒf[ƒg
+			// ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
 			canvas.updatePictArray();
 			
-			// Ä•`‰æ
+			// å†æç”»
 			canvas.repaint();
 			
 			
@@ -744,7 +775,7 @@ public class main {
 		}
 	}
 	
-	//•\¦—p‚ÌƒLƒƒƒ“ƒpƒX
+	//è¡¨ç¤ºç”¨ã®ã‚­ãƒ£ãƒ³ãƒ‘ã‚¹
 	public static class AppCanvas extends Canvas{
 		/**
 		 * 
@@ -790,7 +821,7 @@ public class main {
 				return null;
 			}
 		}
-		//•\¦‚Ì—v‹‚ª‚ ‚ê‚ÎÀs‚³‚ê‚éƒƒ\ƒbƒh
+		//è¡¨ç¤ºã®è¦æ±‚ãŒã‚ã‚Œã°å®Ÿè¡Œã•ã‚Œã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
 		public void paint(Graphics g){
 			g.drawImage(baseImage, 0, 0, main.width, main.heigth, this);
 		}
@@ -802,7 +833,7 @@ public class main {
 		}
 	}
 	
-	//RGBî•ñ‚ğintŒ^‚É•ÏŠ·‚·‚éƒƒ\ƒbƒh
+	//RGBæƒ…å ±ã‚’intå‹ã«å¤‰æ›ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
 	public static int createRGB(byte r, byte g, byte b){
 		
 		return r <<16 | g << 8 | b;
@@ -813,7 +844,7 @@ public class main {
 		for(int i = 0; i < spritline*spritrow; i++){
 			for(int j = 0; j < spritrow*spritline; j++){
 				if(i != j){
-					//ã’[‚Ì”»’è
+					//ä¸Šç«¯ã®åˆ¤å®š
 					System.out.println("pict[" + i  +"].number = " + pict[i].getTop().getNumber() + "pict[" + j + "].number = " + pict[j].getTop().getNumber());
 					if(pict[i].getTop().getNumber() == pict[j].getTop().getNumber()){
 						if(pict[i].getHaming("top") < pict[j].getHaming("top")){
@@ -823,7 +854,7 @@ public class main {
 							pict[i].setFlag("top");
 						}
 					}
-					//‰º’[‚Ì”»’è
+					//ä¸‹ç«¯ã®åˆ¤å®š
 					if(pict[i].getUnder() == pict[j].getUnder()){
 						if(pict[i].getHaming("under") < pict[j].getHaming("under")){
 							pict[j].setFlag("under");
@@ -831,7 +862,7 @@ public class main {
 							pict[i].setFlag("under");
 						}
 					}
-					//‰E’[‚Ì”»’è
+					//å³ç«¯ã®åˆ¤å®š
 					if(pict[i].getRight() == pict[j].getRight()){
 						if(pict[i].getHaming("right") < pict[j].getHaming("right")){
 							pict[j].setFlag("right");
@@ -839,7 +870,7 @@ public class main {
 							pict[i].setFlag("right");
 						}
 					}
-					//¶’[‚Ì”»’è
+					//å·¦ç«¯ã®åˆ¤å®š
 					if(pict[i].getLeft() == pict[j].getLeft()){
 						if(pict[i].getHaming("left") < pict[j].getHaming("left")){
 							pict[j].setFlag("left");
